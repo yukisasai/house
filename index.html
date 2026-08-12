@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>木戸建築設計｜土地探しから引き渡しまで、18ヶ月の家づくり</title>
+<meta name="description" content="年6棟だけの注文住宅。土地探しから引き渡しまでの18ヶ月を月単位で公開しています。相談は無料、営業は行いません。">
+<meta name="robots" content="noindex,nofollow">
+<meta name="format-detection" content="telephone=no">
+<meta name="theme-color" content="#101010">
+<meta property="og:type" content="website">
+<meta property="og:title" content="木戸建築設計｜18ヶ月の家づくり">
+<meta property="og:image" content="./images/og.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;600&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════════════════
+   木戸建築設計 — 注文住宅
+   ──────────────────────────────────────────────────────────────
+   既存10本はすべて「地の色 + 差し色」で構成した。本案だけは
+   差し色を1つも置かない。完全モノクロ。色が入るのは
+   実写写真だけ、という編集的な設計にする。
+   07(不動産・図面+琥珀)とはジャンルが同じだが、
+   琥珀を抜き、罫線を極細にし、余白を倍近く取ることで別物になる。
+     骨格 : Shippori Mincho(見出し) + Inter 300(欧文・数値)。
+            和文明朝は01でも使ったが、あちらは朱が入る。
+            こちらは純黒のみ。同じ書体分類でも印象が変わる。
+     signature : 18ヶ月の工程ガント。家づくりで最も知られていない
+                 のが「どのくらい時間がかかるか」。月単位で全工程を
+                 出し、施主が動く月と待つ月を色の濃さで分ける。
+                 これは売り込みではなく、覚悟を確認してもらう装置。
+   ══════════════════════════════════════════════════════════════ */
+:root{
+  --paper:#FAFAF9; --paper-2:#F0F0EE; --grey:#D8D8D6; --grey-2:#A8A8A6;
+  --ink:#101010; --ink-2:#6A6A68;
+  --line:rgba(16,16,16,.14); --line-w:rgba(250,250,249,.2);
+
+  --f-mincho:'Shippori Mincho','Hiragino Mincho ProN',serif;
+  --f-en:'Inter',system-ui,-apple-system,sans-serif;
+
+  --fs-hero:clamp(1.7rem,6.4vw,2.9rem);
+  --fs-h2:clamp(1.3rem,5vw,1.95rem);
+  --fs-h3:clamp(1rem,3.8vw,1.2rem);
+  --fs-lead:clamp(.9375rem,3.5vw,1.0625rem);
+  --fs-sm:.8125rem; --fs-xs:.6875rem;
+
+  --gut:1.5rem; --sect:clamp(4.5rem,15vw,8rem);
+  --well:600px; --wide:1040px; --bar:74px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-en);font-weight:400;
+  font-size:.9375rem;line-height:2.05;letter-spacing:.01em;padding-bottom:var(--bar);-webkit-font-smoothing:antialiased}
+img{max-width:100%;height:auto;display:block}
+:focus-visible{outline:1px solid var(--ink);outline-offset:4px}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+
+.sect{padding:var(--sect) var(--gut)}
+.sect--alt{background:var(--paper-2)}
+.sect--ink{background:var(--ink);color:var(--paper)}
+.well{max-width:var(--well);margin-inline:auto}
+.wide{max-width:var(--wide);margin-inline:auto}
+
+.eyebrow{font-family:var(--f-en);font-size:var(--fs-xs);font-weight:500;letter-spacing:.24em;
+  text-transform:uppercase;color:var(--ink-2);margin:0 0 1rem}
+.sect--ink .eyebrow{color:var(--grey-2)}
+.h2{font-family:var(--f-mincho);font-size:var(--fs-h2);font-weight:600;line-height:1.68;
+  letter-spacing:.06em;margin:0 0 1.1rem}
+.lead{font-size:var(--fs-lead);font-weight:300;color:var(--ink-2);margin:0 0 2.75rem;line-height:2.1}
+.sect--ink .lead{color:rgba(250,250,249,.62)}
+.fine{font-size:var(--fs-sm);font-weight:300;line-height:1.95;color:var(--ink-2);margin:1.75rem 0 0}
+.sect--ink .fine{color:rgba(250,250,249,.5)}
+
+/* CTAも黒。差し色を作らない代わりに、面積と余白でボタンに見せる */
+.btn{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.15rem;
+  width:100%;min-height:64px;padding:.9rem 1.5rem;border:0;border-radius:0;
+  background:var(--ink);color:var(--paper);font-family:var(--f-mincho);font-size:1.05rem;font-weight:600;
+  letter-spacing:.14em;text-decoration:none;cursor:pointer;
+  transition:background .2s ease,letter-spacing .2s ease}
+.btn:hover{background:#2A2A28;letter-spacing:.18em}
+.btn small{font-family:var(--f-en);font-size:.625rem;font-weight:400;letter-spacing:.18em;color:var(--grey-2)}
+.btn[disabled]{opacity:.4;cursor:not-allowed}
+.btn--out{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+.btn--out:hover{background:var(--ink);color:var(--paper)}
+
+/* ── ヘッダー ── */
+.hd{display:flex;align-items:center;justify-content:space-between;padding:1.1rem var(--gut);border-bottom:1px solid var(--line)}
+.hd__ja{font-family:var(--f-mincho);font-size:1.05rem;font-weight:600;letter-spacing:.22em}
+.hd__en{font-size:.5rem;font-weight:400;letter-spacing:.24em;color:var(--ink-2);margin-top:.15rem}
+.hd__r{font-size:.625rem;font-weight:500;letter-spacing:.14em;color:var(--ink-2)}
+
+/* ── ヒーロー ── */
+.hero__pic{aspect-ratio:16/10;overflow:hidden}
+.hero__pic img{width:100%;height:100%;object-fit:cover}
+.hero__in{padding:2.75rem var(--gut) var(--sect)}
+.hero__ttl{font-family:var(--f-mincho);font-size:var(--fs-hero);font-weight:600;line-height:1.68;
+  letter-spacing:.08em;margin:0 0 1.4rem}
+.hero__sub{font-size:var(--fs-lead);font-weight:300;color:var(--ink-2);margin:0 0 2.25rem;max-width:32em;line-height:2.1}
+.hero__meta{display:grid;gap:0;margin:0 0 2.25rem;padding:0;list-style:none;border-top:1px solid var(--line)}
+.hero__meta li{display:grid;grid-template-columns:7.5em 1fr;gap:1rem;padding:.85rem 0;border-bottom:1px solid var(--line)}
+.hero__meta dt,.hero__meta .k{font-size:.625rem;font-weight:500;letter-spacing:.16em;color:var(--ink-2);margin:0;padding-top:.3em}
+.hero__meta .v{margin:0;font-family:var(--f-mincho);font-size:1.05rem;font-weight:600;letter-spacing:.04em}
+.hero__cta{max-width:380px}
+@media(min-width:900px){
+  .hero{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,4.5rem);align-items:center;
+        max-width:var(--wide);margin-inline:auto;padding:3rem var(--gut) var(--sect)}
+  .hero__pic{aspect-ratio:3/4;order:2}
+  .hero__in{padding:0;order:1}
+}
+
+/* ══ シグネチャー : 18ヶ月ガント ══ */
+.gantt{border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.gantt__hd{display:grid;grid-template-columns:7.5rem 1fr;gap:.75rem;padding:.6rem 0;border-bottom:1px solid var(--line)}
+.gantt__scale{display:grid;grid-template-columns:repeat(18,1fr);font-size:.5rem;font-weight:500;
+  letter-spacing:.02em;color:var(--ink-2);text-align:center}
+.gantt__scale span:nth-child(even){opacity:0}
+.gantt__row{display:grid;grid-template-columns:7.5rem 1fr;gap:.75rem;align-items:center;
+  padding:.55rem 0;border-bottom:1px solid var(--line);cursor:pointer;
+  transition:background .16s ease}
+.gantt__row:hover,.gantt__row[aria-expanded="true"]{background:var(--paper-2)}
+.gantt__row:last-of-type{border-bottom:0}
+.gantt__lb{font-size:.75rem;font-weight:500;line-height:1.5;letter-spacing:.02em}
+.gantt__lb i{display:block;font-style:normal;font-size:.5625rem;color:var(--ink-2);letter-spacing:.1em;margin-top:.1rem}
+.gantt__track{position:relative;height:14px;background:var(--grey);}
+.gantt__fill{position:absolute;top:0;bottom:0;left:var(--s);width:var(--w);background:var(--ink)}
+/* 施主が動く工程は塗り、待つ工程はハッチにする */
+.gantt__fill[data-who="wait"]{
+  background:repeating-linear-gradient(45deg,var(--ink) 0 2px,transparent 2px 5px);
+  border:1px solid var(--ink)}
+.gantt__detail{display:none;grid-column:1/-1;padding:.35rem 0 .9rem;font-size:var(--fs-sm);
+  font-weight:300;line-height:1.95;color:var(--ink-2)}
+.gantt__row[aria-expanded="true"] .gantt__detail{display:block}
+.gantt__legend{display:flex;gap:1.4rem;margin-top:1.1rem;font-size:.625rem;letter-spacing:.08em;color:var(--ink-2)}
+.gantt__legend i{display:inline-block;width:16px;height:9px;margin-right:.4rem;vertical-align:0}
+.gantt__legend i:first-of-type{background:var(--ink)}
+.gantt__hatch{background:repeating-linear-gradient(45deg,var(--ink) 0 2px,transparent 2px 5px);border:1px solid var(--ink)}
+
+/* ── 姿勢 ── */
+.stance{display:grid;gap:0;padding:0;margin:0;list-style:none;border-top:1px solid var(--line-w)}
+.stance li{padding:1.5rem 0;border-bottom:1px solid var(--line-w);display:grid;grid-template-columns:2.5rem 1fr;gap:1.25rem}
+.stance__n{font-size:.6875rem;font-weight:400;letter-spacing:.14em;color:var(--grey-2);padding-top:.4em}
+.stance__t{font-family:var(--f-mincho);font-size:var(--fs-h3);font-weight:600;margin:0 0 .5rem;letter-spacing:.05em}
+.stance__d{margin:0;font-size:var(--fs-sm);font-weight:300;color:rgba(250,250,249,.62);line-height:2}
+
+/* ── 作品 ── */
+.works{display:grid;gap:2.5rem;padding:0;margin:0;list-style:none}
+.work figure{margin:0}
+.work img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.work figcaption{margin-top:.9rem}
+.work__t{font-family:var(--f-mincho);font-size:var(--fs-h3);font-weight:600;margin:0 0 .3rem;letter-spacing:.05em}
+.work__m{display:flex;flex-wrap:wrap;gap:.9rem;margin:0 0 .6rem;padding:0;list-style:none;
+  font-size:.625rem;letter-spacing:.1em;color:var(--ink-2)}
+.work__d{margin:0;font-size:var(--fs-sm);font-weight:300;color:var(--ink-2);line-height:2}
+@media(min-width:760px){.works{grid-template-columns:1fr 1fr;gap:2.5rem 2rem}}
+
+/* ── 設計者 ── */
+.arch{display:grid;gap:1.75rem}
+.arch__pic{aspect-ratio:7/9;overflow:hidden;max-width:230px;background:var(--grey)}
+.arch__pic img{width:100%;height:100%;object-fit:cover}
+.arch__n{font-family:var(--f-mincho);font-size:1.3rem;font-weight:600;margin:0 0 .15rem;letter-spacing:.08em}
+.arch__n span{display:block;font-family:var(--f-en);font-size:.625rem;font-weight:400;letter-spacing:.18em;color:var(--ink-2);margin-top:.35rem}
+.arch__r{font-size:var(--fs-sm);color:var(--ink-2);margin:0 0 1.1rem}
+.arch__q{font-family:var(--f-mincho);font-size:1.05rem;font-weight:400;line-height:2.1;margin:0 0 1.2rem;
+  padding-left:1.1rem;border-left:1px solid var(--ink)}
+.arch__c{display:grid;grid-template-columns:4.5em 1fr;gap:.35rem 1rem;margin:0;font-size:var(--fs-sm);
+  font-weight:300;color:var(--ink-2);line-height:1.95}
+.arch__c dt{font-weight:400}
+.arch__c dd{margin:0}
+@media(min-width:760px){.arch{grid-template-columns:230px 1fr;gap:2.75rem;align-items:start}}
+
+/* ── 施主の声 ── */
+.voices{display:grid;gap:1.75rem;padding:0;margin:0;list-style:none}
+.voice{border-top:1px solid var(--line);padding-top:1.25rem}
+.voice__top{display:flex;align-items:center;gap:.75rem;margin-bottom:.85rem}
+.voice__av{width:44px;height:44px;border-radius:50%;overflow:hidden;flex:none}
+.voice__nm{font-size:.8125rem;font-weight:500;margin:0}
+.voice__ag{font-size:.625rem;letter-spacing:.1em;color:var(--ink-2);margin:0}
+.voice__h{font-family:var(--f-mincho);font-size:.9375rem;font-weight:600;margin:0 0 .45rem;letter-spacing:.04em}
+.voice__b{margin:0;font-size:var(--fs-sm);font-weight:300;color:var(--ink-2);line-height:2}
+@media(min-width:760px){.voices{grid-template-columns:1fr 1fr;gap:1.75rem 2rem}}
+
+/* ── 費用 ── */
+.cost{width:100%;border-collapse:collapse;font-size:var(--fs-sm)}
+.cost th,.cost td{border-bottom:1px solid var(--line);padding:.9rem .5rem;text-align:left;vertical-align:top;line-height:1.9}
+.cost thead th{border-bottom:1px solid var(--ink);font-size:.625rem;font-weight:500;letter-spacing:.14em;color:var(--ink-2)}
+.cost td:last-child,.cost th:last-child{text-align:right;white-space:nowrap;font-weight:500}
+.cost tbody th{font-weight:400}
+.cost tfoot td{border-bottom:0;border-top:1px solid var(--ink);font-family:var(--f-mincho);font-size:1.05rem;font-weight:600;padding-top:1rem}
+
+/* ── FAQ ── */
+.faq{border-top:1px solid var(--line)}
+.faq details{border-bottom:1px solid var(--line)}
+.faq summary{display:grid;grid-template-columns:1fr 14px;align-items:start;gap:1rem;padding:1.3rem 0;
+  font-family:var(--f-mincho);font-weight:600;font-size:.9375rem;line-height:1.8;letter-spacing:.04em;cursor:pointer;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'';margin-top:.7em;width:9px;height:9px;border-right:1px solid var(--ink-2);
+  border-bottom:1px solid var(--ink-2);transform:rotate(45deg);transition:transform .25s ease}
+.faq details[open] summary::after{transform:rotate(-135deg)}
+.faq__a{padding:0 0 1.4rem;font-size:var(--fs-sm);font-weight:300;line-height:2.05;color:var(--ink-2)}
+
+/* ── フォーム ── */
+.form{display:grid;gap:1.25rem}
+.fld label{display:block;font-size:.6875rem;font-weight:500;letter-spacing:.12em;margin-bottom:.5rem;color:var(--ink-2)}
+.reqm{color:var(--ink);margin-left:.4rem}
+.fld input,.fld select,.fld textarea{width:100%;padding:.85rem 0;border:0;border-bottom:1px solid var(--line);
+  border-radius:0;background:transparent;color:var(--ink);font-family:inherit;font-size:1rem;line-height:1.6}
+.fld textarea{min-height:110px;resize:vertical;border:1px solid var(--line);padding:.85rem 1rem}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--ink);outline:none}
+.fld .err{display:none;margin:.4rem 0 0;font-size:var(--fs-sm);color:var(--ink);font-weight:500}
+.fld[data-bad="true"] input,.fld[data-bad="true"] select{border-bottom-width:2px;border-color:var(--ink)}
+.fld[data-bad="true"] .err{display:block}
+.privacy{font-size:var(--fs-sm);font-weight:300;line-height:2;color:var(--ink-2);margin:0}
+.status{display:none;padding:.9rem 1rem;border:1px solid var(--ink);font-size:var(--fs-sm);line-height:1.85}
+.status[data-on]{display:block}
+.done{display:none;text-align:center;padding:3rem 1.25rem;border:1px solid var(--ink)}
+.done[data-on="true"]{display:block}
+.done__m{width:50px;height:50px;margin:0 auto;border-radius:50%;background:var(--ink);display:grid;place-items:center;color:var(--paper)}
+.done h3{font-family:var(--f-mincho);font-weight:600;font-size:var(--fs-h3);margin:1.2rem 0 .6rem;letter-spacing:.06em}
+.done p{margin:0;font-size:var(--fs-sm);font-weight:300;color:var(--ink-2)}
+
+/* ── フッター ── */
+.ft{background:var(--ink);color:rgba(250,250,249,.75);padding:var(--sect) var(--gut) 2.75rem}
+.ft__l{text-align:center;margin-bottom:2rem}
+.ft__ja{font-family:var(--f-mincho);font-size:1.2rem;font-weight:600;letter-spacing:.26em;color:var(--paper)}
+.ft__en{font-size:.5625rem;letter-spacing:.24em;color:var(--grey-2);margin-top:.45rem}
+.ft__pic{aspect-ratio:3/2;overflow:hidden;margin-bottom:2rem}
+.ft__pic img{width:100%;height:100%;object-fit:cover}
+.ft dl{display:grid;grid-template-columns:6em 1fr;gap:.55rem 1rem;margin:0 0 2.25rem;font-size:var(--fs-sm);font-weight:300;line-height:1.9}
+.ft dt{color:rgba(250,250,249,.45)}
+.ft dd{margin:0}
+.ft__cp{font-size:.625rem;letter-spacing:.14em;text-align:center;opacity:.45;margin:0}
+
+/* ── 固定バー ── */
+.bar{position:fixed;inset:auto 0 0 0;z-index:40;display:flex;align-items:center;gap:.85rem;
+  padding:.6rem var(--gut);padding-bottom:calc(.6rem + env(safe-area-inset-bottom,0px));
+  background:rgba(250,250,249,.96);backdrop-filter:blur(12px);border-top:1px solid var(--ink);
+  transform:translateY(115%);transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.bar[data-on="true"]{transform:none}
+.bar__p{flex:none;line-height:1.3}
+.bar__p b{display:block;font-family:var(--f-mincho);font-size:1rem;font-weight:600;letter-spacing:.06em}
+.bar__p span{font-size:.5625rem;letter-spacing:.1em;color:var(--ink-2)}
+.bar .btn{min-height:52px;font-size:.9375rem}
+@media(min-width:620px){.bar{justify-content:center}.bar .btn{max-width:320px}}
+
+.rv{opacity:0;transform:translateY(20px);transition:opacity .8s ease,transform .8s cubic-bezier(.22,1,.36,1)}
+.rv[data-in="true"]{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+</style>
+</head>
+<body>
+
+<header class="hd">
+  <div><div class="hd__ja">木戸建築設計</div><div class="hd__en">KIDO ARCHITECTS</div></div>
+  <span class="hd__r">年間6棟</span>
+</header>
+
+<!-- ════ ヒーロー ════ -->
+<section class="hero">
+  <div class="hero__pic"><img src="./images/hero.svg" alt="住宅外観" width="1600" height="1000" fetchpriority="high"></div>
+  <div class="hero__in">
+    <p class="eyebrow">Custom houses / since 2011</p>
+    <h1 class="hero__ttl">家が建つまでに、<br>18ヶ月かかります。</h1>
+    <p class="hero__sub">短くはできません。土地を探し、法規を確認し、図面を50枚描き、職人の手配を待つ。そのすべてに理由があります。急ぐ方には向いていません。それでもよければ、工程を全部お見せします。</p>
+    <ul class="hero__meta">
+      <li><p class="k">ANNUAL</p><p class="v">6棟まで</p></li>
+      <li><p class="k">DURATION</p><p class="v">18ヶ月</p></li>
+      <li><p class="k">BUDGET FROM</p><p class="v">2,800万円</p></li>
+    </ul>
+    <div class="hero__cta"><a class="btn" href="#contact" data-cta="hero">相談する<small>NO SALES CALLS</small></a></div>
+  </div>
+</section>
+
+<!-- ════ シグネチャー : 18ヶ月ガント ════ -->
+<section class="sect" id="schedule">
+  <div class="wide rv">
+    <p class="eyebrow">Schedule</p>
+    <h2 class="h2">18ヶ月の内訳。<br>各工程を押すと開きます。</h2>
+    <p class="lead">塗りつぶしはお客様が動く期間、斜線は待つ期間です。待つ期間のほうが長い、というのが家づくりの実際です。</p>
+
+    <div class="gantt" id="gantt">
+      <div class="gantt__hd">
+        <span></span>
+        <div class="gantt__scale" aria-hidden="true">
+          <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
+          <span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span>
+          <span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span>
+        </div>
+      </div>
+      <!-- 行はスクリプトで描画。start/len は月単位、who は act(動く)/wait(待つ) -->
+    </div>
+    <p class="gantt__legend"><span><i></i>お客様が動く</span><span><i class="gantt__hatch"></i>待つ・こちらが進める</span></p>
+    <p class="fine">土地をすでにお持ちの場合は、最初の4ヶ月が不要になり14ヶ月程度になります。逆に、土地探しが長引くと24ヶ月を超えることもあります。ここは正直に、読めない部分です。</p>
+  </div>
+</section>
+
+<!-- ════ 姿勢 ════ -->
+<section class="sect sect--ink" id="stance">
+  <div class="well rv">
+    <p class="eyebrow">Our stance</p>
+    <h2 class="h2">お引き受けしないことが、<br>年に何度かあります。</h2>
+    <p class="lead">年6棟という上限は、設計者が全現場に週1回通える数から逆算しています。</p>
+    <ul class="stance">
+      <li><span class="stance__n">01</span><div><h3 class="stance__t">工期を縮めたい方</h3><p class="stance__d">構造材の乾燥期間や、コンクリートの養生日数は短縮できません。無理に詰めると、必ず数年後に出ます。他社をご検討ください。</p></div></li>
+      <li><span class="stance__n">02</span><div><h3 class="stance__t">相見積もりの当て馬</h3><p class="stance__d">概算のみのご依頼はお断りしています。図面を描かずに出す金額に意味がないためです。他社と比較されること自体は歓迎します。</p></div></li>
+      <li><span class="stance__n">03</span><div><h3 class="stance__t">総予算2,800万円未満</h3><p class="stance__d">建物本体のみの金額です。この規模を下回ると、当社の設計料が相対的に重くなりすぎます。規格住宅のほうが合理的です。</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ════ 作品 ════ -->
+<section class="sect" id="works">
+  <div class="wide rv">
+    <p class="eyebrow">Works</p>
+    <h2 class="h2">これまでの家</h2>
+    <ul class="works">
+      <li class="work"><figure>
+        <img src="./images/ext.svg" alt="深谷の家" width="1000" height="750" loading="lazy">
+        <figcaption>
+          <h3 class="work__t">深谷の家</h3>
+          <ul class="work__m"><li>2024</li><li>延床 108㎡</li><li>木造2階</li><li>3,240万円</li></ul>
+          <p class="work__d">南に工場が建つ可能性があったため、光を上から取る構成にしました。実際に3年後、隣地に建物が建っています。</p>
+        </figcaption></figure></li>
+      <li class="work"><figure>
+        <img src="./images/conc.svg" alt="行田の家" width="1000" height="750" loading="lazy">
+        <figcaption>
+          <h3 class="work__t">行田の家</h3>
+          <ul class="work__m"><li>2023</li><li>延床 94㎡</li><li>木造平屋</li><li>2,880万円</li></ul>
+          <p class="work__d">ご夫婦2人と犬2匹。将来の介護を見据えて全て平屋とし、廊下幅を1.2mで統一しています。</p>
+        </figcaption></figure></li>
+      <li class="work"><figure>
+        <img src="./images/wood.svg" alt="熊谷の家" width="1000" height="750" loading="lazy">
+        <figcaption>
+          <h3 class="work__t">熊谷の家</h3>
+          <ul class="work__m"><li>2022</li><li>延床 132㎡</li><li>木造2階</li><li>3,960万円</li></ul>
+          <p class="work__d">日本一暑い街と言われる地域のため、断熱等級6・日射遮蔽を最優先に。夏の電気代は前住居の6割になったと伺っています。</p>
+        </figcaption></figure></li>
+      <li class="work"><figure>
+        <img src="./images/model.svg" alt="寄居の家" width="1200" height="800" loading="lazy">
+        <figcaption>
+          <h3 class="work__t">寄居の家</h3>
+          <ul class="work__m"><li>2021</li><li>延床 86㎡</li><li>木造2階</li><li>2,810万円</li></ul>
+          <p class="work__d">予算の上限が厳しく、仕上げを減らして断熱と構造に配分しました。見えるところは、後から足せます。</p>
+        </figcaption></figure></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ════ 設計者 ════ -->
+<section class="sect sect--alt" id="architect">
+  <div class="wide rv">
+    <p class="eyebrow">Architect</p>
+    <div class="arch">
+      <div class="arch__pic"><img src="./images/a-01.svg" alt="木戸" width="700" height="900" loading="lazy"></div>
+      <div>
+        <h2 class="arch__n">木戸 亮平<span>RYOHEI KIDO</span></h2>
+        <p class="arch__r">代表／一級建築士（第000000号）</p>
+        <p class="arch__q">かっこいい家より、30年後に直しやすい家を。<br>そのほうが、結局は長く好かれます。</p>
+        <dl class="arch__c">
+          <dt>2003</dt><dd>芝浦工業大学 建築学科 卒業</dd>
+          <dt>2005</dt><dd>都内設計事務所 勤務</dd>
+          <dt>2011</dt><dd>木戸建築設計 設立</dd>
+          <dt>2019</dt><dd>埼玉建築文化賞 奨励賞</dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ 費用 ════ -->
+<section class="sect" id="cost">
+  <div class="well rv">
+    <p class="eyebrow">Cost</p>
+    <h2 class="h2">内訳を先に出します。</h2>
+    <p class="lead">延床100㎡・木造2階建ての標準的な例です。土地代は含みません。</p>
+    <table class="cost">
+      <thead><tr><th>項目</th><th>内容</th><th>金額</th></tr></thead>
+      <tbody>
+        <tr><th>本体工事</th><td>基礎・構造・外装・内装・設備</td><td>2,750万円</td></tr>
+        <tr><th>付帯工事</th><td>給排水引込・外構・地盤改良</td><td>380万円</td></tr>
+        <tr><th>設計監理料</th><td>本体工事の12%（週1回の現場監理を含む）</td><td>330万円</td></tr>
+        <tr><th>諸費用</th><td>確認申請・登記・火災保険・住宅性能評価</td><td>190万円</td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="2">合計（税込）</td><td>3,650万円</td></tr></tfoot>
+    </table>
+    <p class="fine">設計監理料は着手時30%・実施設計完了時40%・引き渡し時30%の分割です。契約後に金額が上がるのは、お客様のご要望で仕様を変更した場合のみです。当社都合の増額は行いません。</p>
+  </div>
+</section>
+
+<!-- ════ 声 ════ -->
+<section class="sect sect--alt" id="voices">
+  <div class="wide rv">
+    <p class="eyebrow">Clients</p>
+    <h2 class="h2">住まわれている方の話</h2>
+    <ul class="voices">
+      <li class="voice">
+        <div class="voice__top"><div class="voice__av"><img src="./images/o-01.svg" alt="" width="400" height="400" loading="lazy"></div><div><p class="voice__nm">深谷の家 O様</p><p class="voice__ag">2024年 引き渡し</p></div></div>
+        <p class="voice__h">待つ期間が長いと最初に言われた</p>
+        <p class="voice__b">正直、着工までの10ヶ月は不安でした。ただ毎月の定例で進捗を見せてもらえたので、止まっているわけではないと分かりました。今思えば、あの期間に決めきったから追加工事がゼロで済んだのだと思います。</p></li>
+      <li class="voice">
+        <div class="voice__top"><div class="voice__av"><img src="./images/o-02.svg" alt="" width="400" height="400" loading="lazy"></div><div><p class="voice__nm">行田の家 N様</p><p class="voice__ag">2023年 引き渡し</p></div></div>
+        <p class="voice__h">要望を全部は通してもらえません</p>
+        <p class="voice__b">吹き抜けは断られました。この地域の冬を考えると勧められない、と。悔しかったですが、実際に住んでみて正しかったと思っています。理由を説明してくれるので納得はできます。</p></li>
+    </ul>
+    <p class="fine">ご本人の同意を得て掲載しています。</p>
+  </div>
+</section>
+
+<!-- ════ フォーム ════ -->
+<section class="sect" id="contact">
+  <div class="well rv">
+    <p class="eyebrow">Contact</p>
+    <h2 class="h2">ご相談</h2>
+    <p class="lead">初回の相談は無料です。その場で契約を求めることはありません。こちらから営業のご連絡をすることもありません。</p>
+
+    <div class="done" id="done" role="status" aria-live="polite">
+      <div class="done__m"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <h3>承りました</h3>
+      <p>3営業日以内に、木戸よりご返信します。<br>返信が遅い場合は現場に出ています。</p>
+    </div>
+
+    <form class="form" id="form" novalidate>
+      <div class="fld" data-f="name"><label for="i-name">お名前<span class="reqm">*</span></label><input id="i-name" name="name" type="text" autocomplete="name" placeholder=""><p class="err">ご入力ください</p></div>
+      <div class="fld" data-f="email"><label for="i-email">メールアドレス<span class="reqm">*</span></label><input id="i-email" name="email" type="email" inputmode="email" autocomplete="email" placeholder=""><p class="err">ご確認ください</p></div>
+      <div class="fld"><label for="i-tel">電話番号</label><input id="i-tel" name="tel" type="tel" inputmode="tel" autocomplete="tel" placeholder=""></div>
+      <div class="fld" data-f="land"><label for="i-land">土地について<span class="reqm">*</span></label>
+        <select id="i-land" name="land"><option value="">選んでください</option><option>すでに所有している</option><option>候補があり検討中</option><option>これから探す</option><option>建て替え・実家の土地</option></select>
+        <p class="err">ご選択ください</p></div>
+      <div class="fld" data-f="budget"><label for="i-budget">建物の総予算<span class="reqm">*</span></label>
+        <select id="i-budget" name="budget"><option value="">選んでください</option><option>2,800〜3,500万円</option><option>3,500〜4,500万円</option><option>4,500万円以上</option><option>2,800万円未満</option><option>まだ分からない</option></select>
+        <p class="err">ご選択ください</p></div>
+      <div class="fld"><label for="i-msg">ご相談内容</label><textarea id="i-msg" name="message" placeholder="お考えのこと、不安なことをご自由に"></textarea></div>
+      <input type="hidden" name="pageUrl" id="i-url">
+      <div class="sr" aria-hidden="true"><label for="i-hp">入力しないでください</label><input id="i-hp" name="company" type="text" tabindex="-1" autocomplete="off"></div>
+      <p class="status" id="status" role="alert"></p>
+      <button type="submit" class="btn" data-cta="form">送信する<small>REPLY WITHIN 3 BUSINESS DAYS</small></button>
+      <p class="privacy">ご記入いただいた情報は、ご相談への返信にのみ使用します。ダイレクトメールの送付や、第三者への提供は一切行いません。</p>
+    </form>
+  </div>
+</section>
+
+<!-- ════ FAQ ════ -->
+<section class="sect sect--alt" id="faq">
+  <div class="well rv">
+    <p class="eyebrow">FAQ</p>
+    <h2 class="h2">よくあるご質問</h2>
+    <div class="faq">
+      <details><summary>本当に18ヶ月かかりますか。</summary><div class="faq__a">土地からお探しの場合の平均です。過去5年の実績は14〜26ヶ月で、平均18.4ヶ月でした。土地をお持ちであれば14ヶ月前後になります。工期短縮のご要望はお受けしていません。</div></details>
+      <details><summary>設計料12%は高くありませんか。</summary><div class="faq__a">工務店の設計施工と比べれば高くなります。当社の設計監理料には、週1回の現場確認と、施工会社への是正指示が含まれます。この費用を惜しむ場合、設計施工一括のほうが合理的です。正直にそう申し上げています。</div></details>
+      <details><summary>施工会社は選べますか。</summary><div class="faq__a">3社に見積もりを取り、金額と体制を比較したうえでお客様に選んでいただきます。当社と資本関係のある施工会社はありません。</div></details>
+      <details><summary>引き渡し後の対応は。</summary><div class="faq__a">1年・2年・5年・10年で点検に伺います。設立から15年で、これまでの全棟に伺い続けています。年6棟に絞っているのは、この訪問を続けられる数だからです。</div></details>
+      <details><summary>遠方でも依頼できますか。</summary><div class="faq__a">週1回通える範囲、車で片道90分以内を目安としています。これを超える場合は、現場監理の質を保てないためお断りしています。</div></details>
+    </div>
+  </div>
+</section>
+
+<footer class="ft">
+  <div class="well">
+    <div class="ft__l"><div class="ft__ja">木戸建築設計</div><div class="ft__en">KIDO ARCHITECTS</div></div>
+    <div class="ft__pic"><img src="./images/model.svg" alt="事務所" width="1200" height="800" loading="lazy"></div>
+    <dl>
+      <dt>所在地</dt><dd>埼玉県熊谷市本町1-2-3</dd>
+      <dt>登録</dt><dd>一級建築士事務所 埼玉県知事登録 第0000号</dd>
+      <dt>設立</dt><dd>2011年</dd>
+      <dt>対応範囲</dt><dd>事務所から車で片道90分以内</dd>
+      <dt>電話</dt><dd>048-000-9012（平日 10:00–18:00）</dd>
+    </dl>
+    <p class="ft__cp">© KIDO ARCHITECTS — 架空クライアントによる制作サンプルです</p>
+  </div>
+</footer>
+
+<div class="bar" id="bar">
+  <div class="bar__p"><b>年6棟まで</b><span>2,800万円〜 / 18ヶ月</span></div>
+  <a class="btn" href="#contact" data-cta="bar">相談する</a>
+</div>
+
+<script>
+(function(){
+  'use strict';
+  var track=function(n,p){if(typeof window.gtag==='function')window.gtag(n,p||{});};
+
+  /* ── 18ヶ月ガント ──────────────────────────────────────
+     [ラベル, 補足, 開始月(1始まり), 期間, 誰が動くか, 詳細]
+     18ヶ月を100%として位置と幅を算出する。                  */
+  var TOTAL=18;
+  var ROWS=[
+    ['土地探し','LAND',              1,4,'act','ご希望のエリアで出た土地を、その都度こちらで法規と地盤の観点から確認します。買ってはいけない土地を止めるのが、この期間の主な仕事です。平均で12件ほど見ていただきます。'],
+    ['基本設計','SCHEMATIC',         4,4,'act','間取りと外形を決めます。打合せは月2回、各3時間。この期間だけは、かなりの時間をいただきます。模型を3回作り直すこともあります。'],
+    ['実施設計','DETAIL',            8,4,'wait','図面を約50枚描きます。お客様の出番はほとんどありません。仕上材や設備の最終確認だけ月1回お願いします。'],
+    ['見積・施工者選定','TENDER',    12,2,'act','3社から見積もりを取り、比較表をお出しします。金額が合わない場合、この段階で仕様を調整します。'],
+    ['確認申請','PERMIT',           13,2,'wait','行政の審査期間です。こちらでは何もできません。長期優良住宅の認定を取る場合は、さらに3週間ほど加わります。'],
+    ['着工・基礎','FOUNDATION',      15,2,'wait','地鎮祭のあと着工します。コンクリートの養生に必要な日数は、季節によって変わります。'],
+    ['上棟・工事','CONSTRUCTION',    16,3,'wait','週1回、現場で確認します。お客様にも月1回は来ていただき、実際の広さを体で確認していただきます。'],
+    ['竣工・引き渡し','HANDOVER',    18,1,'act','完了検査、社内検査、お客様検査の順に行います。指摘事項をすべて直してからお渡しします。']
+  ];
+
+  var g=document.getElementById('gantt');
+  ROWS.forEach(function(r,i){
+    var s=(r[2]-1)/TOTAL*100, w=r[3]/TOTAL*100;
+    var row=document.createElement('div');
+    row.className='gantt__row';
+    row.setAttribute('role','button');
+    row.setAttribute('tabindex','0');
+    row.setAttribute('aria-expanded','false');
+    row.innerHTML=
+      '<span class="gantt__lb">'+r[0]+'<i>'+r[1]+' / '+r[3]+'M</i></span>'+
+      '<span class="gantt__track"><span class="gantt__fill" data-who="'+r[4]+'" style="--s:'+s+'%;--w:'+w+'%"></span></span>'+
+      '<div class="gantt__detail">'+r[5]+'</div>';
+    var toggle=function(){
+      var open=row.getAttribute('aria-expanded')==='true';
+      row.setAttribute('aria-expanded',String(!open));
+      if(!open) track('gantt_open',{step:r[1]});
+    };
+    row.addEventListener('click',toggle);
+    row.addEventListener('keydown',function(e){
+      if(e.key===' '||e.key==='Enter'){e.preventDefault();toggle();}
+    });
+    g.appendChild(row);
+  });
+
+  /* ── 固定バー ── */
+  var bar=document.getElementById('bar'),hero=document.querySelector('.hero'),ct=document.getElementById('contact');
+  function tb(){var p=hero.getBoundingClientRect().bottom<0,a=ct.getBoundingClientRect().top<window.innerHeight*0.85;
+    bar.setAttribute('data-on',(p&&!a)?'true':'false');}
+  tb();window.addEventListener('scroll',tb,{passive:true});window.addEventListener('resize',tb,{passive:true});
+
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){
+    if(e.isIntersecting){e.target.setAttribute('data-in','true');io.unobserve(e.target);}});},{rootMargin:'0px 0px -12% 0px'});
+  [].slice.call(document.querySelectorAll('.rv')).forEach(function(el){io.observe(el);});
+
+  [].slice.call(document.querySelectorAll('[data-cta]')).forEach(function(el){
+    el.addEventListener('click',function(){track('cta_click',{position:el.dataset.cta});});});
+
+  /* ── フォーム ── */
+  var form=document.getElementById('form'),st=document.getElementById('status'),done=document.getElementById('done'),started=false;
+  form.addEventListener('input',function(){if(!started){started=true;track('form_start');}});
+  function bad(n,is){var f=form.querySelector('[data-f="'+n+'"]');if(f)f.setAttribute('data-bad',String(is));}
+  form.addEventListener('submit',function(e){
+    e.preventDefault();
+    var btn=form.querySelector('button[type=submit]'),fd=new FormData(form),d={};
+    fd.forEach(function(v,k){d[k]=String(v);});d.pageUrl=location.href;
+    var ok=true;
+    [['name',d.name.trim().length>0],
+     ['email',/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(d.email.trim())],
+     ['land',d.land.trim().length>0],
+     ['budget',d.budget.trim().length>0]
+    ].forEach(function(p){bad(p[0],!p[1]);if(!p[1])ok=false;});
+    if(!ok){var f=form.querySelector('[data-bad="true"] input,[data-bad="true"] select');if(f)f.focus();return;}
+    btn.disabled=true;btn.textContent='送信中…';st.removeAttribute('data-on');
+    fetch('/api/inquiries',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)})
+      .then(function(r){if(!r.ok)throw 0;
+        track('form_submit',{land:d.land,budget:d.budget});
+        form.style.display='none';done.setAttribute('data-on','true');
+        done.scrollIntoView({behavior:'smooth',block:'center'});})
+      .catch(function(){st.setAttribute('data-on','');
+        st.textContent='送信できませんでした。恐れ入りますが 048-000-9012 までお電話ください。';
+        btn.disabled=false;btn.textContent='送信する';});
+  });
+})();
+</script>
+</body>
+</html>

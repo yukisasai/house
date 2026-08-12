@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 750" width="1000" height="750" role="img" aria-label="正面" preserveAspectRatio="xMidYMid slice">
+<defs><filter id="gn3" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter></defs>
+
+  <rect width="1000" height="750" fill="#EDEDEB"/>
+  <ellipse cx="700" cy="150" rx="440" ry="225" fill="#fff" opacity=".4" style="filter:blur(75px)"/>
+  <rect y="495" width="1000" height="255" fill="#CFCFCD"/>
+  
+    <rect x="140" y="195" width="720" height="300" fill="#8A8A88" fill-opacity=".07" stroke="#101010" stroke-width="2.625"/>
+    <path d="M140 195 L500 117 L860 195" fill="#8A8A88" fill-opacity=".12" stroke="#101010" stroke-width="2.625"/>
+    <!-- ガレージシャッター -->
+    <rect x="197.6" y="309" width="331.2" height="186" fill="#101010" fill-opacity=".1" stroke="#101010" stroke-width="2.625"/>
+    <line x1="197.6" y1="335.57142857142856" x2="528.8" y2="335.57142857142856" stroke="#101010" stroke-width="1.575" opacity=".55"/><line x1="197.6" y1="362.14285714285717" x2="528.8" y2="362.14285714285717" stroke="#101010" stroke-width="1.575" opacity=".55"/><line x1="197.6" y1="388.7142857142857" x2="528.8" y2="388.7142857142857" stroke="#101010" stroke-width="1.575" opacity=".55"/><line x1="197.6" y1="415.2857142857143" x2="528.8" y2="415.2857142857143" stroke="#101010" stroke-width="1.575" opacity=".55"/><line x1="197.6" y1="441.8571428571429" x2="528.8" y2="441.8571428571429" stroke="#101010" stroke-width="1.575" opacity=".55"/><line x1="197.6" y1="468.42857142857144" x2="528.8" y2="468.42857142857144" stroke="#101010" stroke-width="1.575" opacity=".55"/><line x1="197.6" y1="495" x2="528.8" y2="495" stroke="#101010" stroke-width="1.575" opacity=".55"/>
+    <!-- 窓 -->
+    <rect x="586.4" y="243" width="187.20000000000002" height="90" fill="#8A8A88" fill-opacity=".3" stroke="#101010" stroke-width="2.625"/>
+    <rect x="586.4" y="363" width="187.20000000000002" height="72" fill="#8A8A88" fill-opacity=".18" stroke="#101010" stroke-width="2.625"/>
+    <!-- 車のシルエット -->
+    <path d="M243.968 495 l33.12 -29.76 h139.10399999999998 l39.744 29.76 z" fill="#101010" fill-opacity=".3"/>
+    <circle cx="283.712" cy="495" r="16.56" fill="#101010" fill-opacity=".45"/>
+    <circle cx="396.32" cy="495" r="16.56" fill="#101010" fill-opacity=".45"/>
+  <line x1="0" y1="495" x2="1000" y2="495" stroke="#101010" stroke-width="2.625" opacity=".6"/>
+  <rect width="1000" height="750" filter="url(#gn3)" opacity="0.06" style="mix-blend-mode:multiply"/>
+</svg>

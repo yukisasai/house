@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" role="img" aria-label="施主" preserveAspectRatio="xMidYMid slice">
+<defs></defs>
+
+  <rect width="400" height="400" fill="#E6E6E4"/>
+  <rect x="12" y="12" width="376" height="376"
+        fill="none" stroke="#6A6A68" stroke-width="2" stroke-dasharray="12 8" opacity=".6"/>
+  <circle cx="200" cy="164" r="44" fill="#101010" opacity=".16"/>
+  <path d="M 120 280 a 80 72 0 0 1 160 0 z" fill="#101010" opacity=".16"/>
+  <text x="200" y="324" text-anchor="middle" font-family="'Hiragino Sans',sans-serif"
+        font-size="20.8" font-weight="600" fill="#101010" fill-opacity=".55">施主</text>
+  
+  <text x="200" y="384" text-anchor="middle" font-family="'Jost',sans-serif"
+        font-size="13.600000000000001" letter-spacing="5.6000000000000005" fill="#101010" fill-opacity=".3">400 × 400</text>
+</svg>
